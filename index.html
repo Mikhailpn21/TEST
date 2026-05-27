@@ -1,0 +1,370 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winlator / GameHub Setup Guide - Dark Wiki</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+    .wiki-container {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+    }
+    .wiki-header {
+      background-color: #0d1117;
+      border-bottom: 1px solid #30363d;
+    }
+    .wiki-h2 {
+      border-bottom: 1px solid #30363d;
+    }
+    .wiki-link {
+      color: #58a6ff;
+    }
+    .wiki-link:hover {
+      text-decoration: underline;
+    }
+    .wiki-toc {
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+    }
+    .wiki-box {
+      border: 1px solid #30363d;
+      background-color: #0d1117;
+    }
+    .wiki-alert {
+      background-color: rgba(240, 180, 41, 0.1);
+      border: 1px solid rgba(240, 180, 41, 0.3);
+    }
+  </style>
+</head>
+<body class="py-6 px-4 md:py-10">
+
+  <div class="max-w-4xl mx-auto wiki-container rounded-sm shadow-md">
+    
+    <!-- Top Wiki Banner / Title Area -->
+    <header class="wiki-header p-6 md:p-8">
+      <div class="flex items-center gap-2 text-xs text-slate-500 mb-2 uppercase tracking-wider font-mono">
+        <span>Main Page</span> &gt; <span>Android Emulation Guides</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-serif font-normal text-slate-100 mb-2">
+        Winlator/Gamehub Setup Tutorial by Mikhailpn
+      </h1>
+      <p class="text-sm text-slate-400 italic">
+        From Mikhailpn, the free emulation encyclopedia.
+      </p>
+    </header>
+
+    <div class="p-6 md:p-8 space-y-8">
+      
+      <!-- Short Intro -->
+      <section class="text-sm leading-relaxed text-slate-300">
+        <p class="mb-4">
+          This article provides a comprehensive setup guide for launching Windows PC games on Android devices using <strong>Winlator</strong> (the translation environment wrapper) integrated with <strong>GameHub</strong> (the frontend library organizer). 
+        </p>
+        <p>
+          Configuration and performance settings vary significantly based on device processors. Users are advised to review the core download instructions below and select the tutorial video matched to their exact chipset.
+        </p>
+      </section>
+
+      <!-- Table of Contents (Standard Wiki Style) -->
+      <section class="inline-block wiki-toc rounded p-4 text-sm mb-4">
+        <div class="font-bold text-center mb-2 text-slate-200 border-b border-slate-700 pb-1 flex items-center justify-center gap-2">
+          <i data-lucide="list" class="w-4 h-4"></i> Contents
+        </div>
+        <ol class="list-decimal pl-6 space-y-1 font-mono text-xs">
+          <li><a href="#downloads" class="wiki-link">Downloads & Crucial Instructions</a></li>
+          <li><a href="#hardware-requirements" class="wiki-link">System Requirements & Device Capability Table</a></li>
+          <li><a href="#video-guides" class="wiki-link">Chipset-Specific Video Tutorials</a></li>
+          <li><a href="#faq" class="wiki-link">Pro Emulation Tips</a></li>
+          <li><a href="#contact" class="wiki-link">Help, Games & Support DM</a></li>
+        </ol>
+      </section>
+
+      <!-- Section 1: Downloads -->
+      <section id="downloads" class="scroll-mt-6">
+        <h2 class="wiki-h2 text-xl font-serif font-semibold text-slate-100 pb-2 mb-4 flex items-center gap-2">
+          <span class="text-slate-500">1.</span> Downloads & Crucial Instructions
+        </h2>
+        
+        <!-- Instruction Box (Standard Wiki Alert box style) -->
+        <div class="wiki-alert rounded p-4 mb-6 text-sm text-slate-300 flex gap-3">
+          <div class="text-amber-500 mt-0.5 shrink-0">
+            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <strong class="text-amber-400">Notice for Downloading:</strong> 
+            This is the link to download the app. When you press "Download", it will open a pop-up. Close the pop-up immediately and press download again to initiate the real download.
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Winlator Card -->
+          <div class="wiki-box p-4 rounded">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="external-link" class="w-4 h-4 text-blue-400"></i>
+              <h3 class="font-bold text-slate-100">Winlator Emulator</h3>
+            </div>
+            <p class="text-xs text-slate-400 mb-4">
+              Core translation environment using Wine, Box86, and Box64 to interpret PC software on Android hardware.
+            </p>
+            <a href="https://winlator.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1.5 bg-blue-950/40 hover:bg-blue-900/50 border border-blue-800 text-blue-300 rounded transition-colors">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              Download Winlator (New Tab)
+            </a>
+          </div>
+
+          <!-- GameHub Card -->
+          <div class="wiki-box p-4 rounded">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="external-link" class="w-4 h-4 text-purple-400"></i>
+              <h3 class="font-bold text-slate-100">GameHub Launcher</h3>
+            </div>
+            <p class="text-xs text-slate-400 mb-4">
+              Organized gaming center front-end allowing users to consolidate, launch, and customize their simulated Windows games.
+            </p>
+            <a href="https://gamehub.xiaoji.com/en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1.5 bg-purple-950/40 hover:bg-purple-900/50 border border-purple-800 text-purple-300 rounded transition-colors">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              Download GameHub (New Tab)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Hardware Requirements & Supported Devices -->
+      <section id="hardware-requirements" class="scroll-mt-6">
+        <h2 class="wiki-h2 text-xl font-serif font-semibold text-slate-100 pb-2 mb-4">
+          <span class="text-slate-500">2.</span> System Requirements & Device Capability Table
+        </h2>
+        <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+          While premium modern 3D titles require high-end chipsets, classic 2D games, retro RPGs, and visual novels can be comfortably emulated on entry-level, low-spec hardware. Winlator operates flexibly across multiple tiers.
+        </p>
+
+        <!-- Max Requirements Summary Panel -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <div class="wiki-box p-3 rounded text-center">
+            <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">RAM Capacity</div>
+            <div class="text-lg font-bold text-slate-100">4GB - 16GB+</div>
+          </div>
+          <div class="wiki-box p-3 rounded text-center">
+            <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Device Tiers</div>
+            <div class="text-lg font-bold text-slate-100">High, Mid, Low-end</div>
+          </div>
+          <div class="wiki-box p-3 rounded text-center">
+            <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Supported Drivers</div>
+            <div class="text-lg font-bold text-slate-100">Turnip, VirGL, Mesa</div>
+          </div>
+        </div>
+
+        <!-- Wiki Table of Elite Devices (Multi-Chipset & Tiers) -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse wiki-box rounded text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-800 border-b border-slate-700 text-slate-200 font-semibold font-mono">
+                <th class="p-3">Device Tier</th>
+                <th class="p-3">Sample Device</th>
+                <th class="p-3">SoC / CPU</th>
+                <th class="p-3">RAM</th>
+                <th class="p-3">Target Gaming Profile</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800">
+              <!-- High End -->
+              <tr class="bg-emerald-950/10">
+                <td class="p-3 font-semibold text-emerald-400 font-mono">HIGH-END</td>
+                <td class="p-3 font-semibold text-slate-100">Samsung Galaxy S26 Ultra</td>
+                <td class="p-3 text-slate-300">Snapdragon 8 Gen 5 (Adreno 840)</td>
+                <td class="p-3 text-slate-300">12GB - 16GB</td>
+                <td class="p-3 text-emerald-300 font-semibold">Heavy 3D PC Games (GTA V, Witcher 3)</td>
+              </tr>
+              <tr class="bg-emerald-950/10">
+                <td class="p-3 font-semibold text-emerald-400 font-mono">HIGH-END</td>
+                <td class="p-3 font-semibold text-slate-100">Samsung Galaxy S25 Ultra</td>
+                <td class="p-3 text-slate-300">Snapdragon 8 Elite (Adreno 830)</td>
+                <td class="p-3 text-slate-300">12GB</td>
+                <td class="p-3 text-emerald-300 font-semibold">Heavy 3D PC Games (Skyrim SE, Fallout 4)</td>
+              </tr>
+              <tr class="bg-emerald-950/10">
+                <td class="p-3 font-semibold text-emerald-400 font-mono">HIGH-END</td>
+                <td class="p-3 font-semibold text-slate-100">Xiaomi 14T Pro</td>
+                <td class="p-3 text-slate-300">Dimensity 9300+ (Immortalis-G720)</td>
+                <td class="p-3 text-slate-300">12GB - 16GB</td>
+                <td class="p-3 text-emerald-300 font-semibold">Heavy 3D Games via VirGL/Mesa DXVK</td>
+              </tr>
+              <!-- Mid-Range -->
+              <tr class="bg-blue-950/10">
+                <td class="p-3 font-semibold text-blue-400 font-mono">MID-RANGE</td>
+                <td class="p-3 font-semibold text-slate-100">Samsung Galaxy S24+ (Exynos)</td>
+                <td class="p-3 text-slate-300">Exynos 2400 (Xclipse 940)</td>
+                <td class="p-3 text-slate-300">12GB</td>
+                <td class="p-3 text-blue-300">Moderate 3D PC Games (Tomb Raider, Portal 2)</td>
+              </tr>
+              <tr class="bg-blue-950/10">
+                <td class="p-3 font-semibold text-blue-400 font-mono">MID-RANGE</td>
+                <td class="p-3 font-semibold text-slate-100">Samsung Galaxy S23 Ultra</td>
+                <td class="p-3 text-slate-300">Snapdragon 8 Gen 2 (Adreno 740)</td>
+                <td class="p-3 text-slate-300">8GB - 12GB</td>
+                <td class="p-3 text-blue-300">Moderate 3D Games (GTA IV, Dark Souls II)</td>
+              </tr>
+              <tr class="bg-blue-950/10">
+                <td class="p-3 font-semibold text-blue-400 font-mono">MID-RANGE</td>
+                <td class="p-3 font-semibold text-slate-100">Vivo X100 Pro</td>
+                <td class="p-3 text-slate-300">Dimensity 9300 (Immortalis-G720)</td>
+                <td class="p-3 text-slate-300">12GB</td>
+                <td class="p-3 text-blue-300">Stable 3D Emulation with Custom Drivers</td>
+              </tr>
+              <tr class="bg-blue-950/10">
+                <td class="p-3 font-semibold text-blue-400 font-mono">MID-RANGE</td>
+                <td class="p-3 font-semibold text-slate-100">Samsung Galaxy S22+</td>
+                <td class="p-3 text-slate-300">Exynos 2200 (Xclipse 920)</td>
+                <td class="p-3 text-slate-300">8GB</td>
+                <td class="p-3 text-blue-300">Light 3D Games & Action RPGs (Skyrim LE)</td>
+              </tr>
+              <!-- Low-End -->
+              <tr class="bg-orange-950/10">
+                <td class="p-3 font-semibold text-orange-400 font-mono">LOW-END</td>
+                <td class="p-3 font-semibold text-slate-100">Redmi Note 13 Pro+</td>
+                <td class="p-3 text-slate-300">Dimensity 7200 Ultra (Mali-G610)</td>
+                <td class="p-3 text-slate-300">8GB</td>
+                <td class="p-3 text-orange-300">Older 3D / Isometric Games (Diablo II, Fallout 2)</td>
+              </tr>
+              <tr class="bg-orange-950/10">
+                <td class="p-3 font-semibold text-orange-400 font-mono">LOW-END</td>
+                <td class="p-3 font-semibold text-slate-100">ZTE Blade V50 Design</td>
+                <td class="p-3 text-slate-300">Unisoc T606 (Mali-G57)</td>
+                <td class="p-3 text-slate-300">4GB - 6GB</td>
+                <td class="p-3 text-orange-300">Classic 2D PC Games, Indie Titles & Visual Novels</td>
+              </tr>
+              <tr class="bg-orange-950/10">
+                <td class="p-3 font-semibold text-orange-400 font-mono">LOW-END</td>
+                <td class="p-3 font-semibold text-slate-100">Motorola Moto G14</td>
+                <td class="p-3 text-slate-300">Unisoc T616 (Mali-G57)</td>
+                <td class="p-3 text-slate-300">4GB</td>
+                <td class="p-3 text-orange-300">Lightweight retro PC titles, 2D platformers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Video Guides -->
+      <section id="video-guides" class="scroll-mt-6">
+        <h2 class="wiki-h2 text-xl font-serif font-semibold text-slate-100 pb-2 mb-4">
+          <span class="text-slate-500">3.</span> Chipset-Specific Video Tutorials
+        </h2>
+        <p class="text-xs text-slate-400 mb-4">
+          Emulation settings depend highly on your device processor. Follow the designated YouTube tutorial for your hardware:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Snapdragon -->
+          <div class="wiki-box p-4 rounded border-l-4 border-l-amber-600">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xs font-bold uppercase text-amber-500">Snapdragon</h3>
+              <i data-lucide="video" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <p class="text-xs text-slate-400 mb-3">Best configurations for Qualcomm processors & Adreno Turnip drivers.</p>
+            <a href="https://youtu.be/u1h4CMRO-JY?si=BwX_bHCgquL6e89P" target="_blank" rel="noopener noreferrer" class="wiki-link text-xs font-semibold inline-flex items-center gap-1">
+              <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-500"></i> Watch Guide on YouTube &rarr;
+            </a>
+          </div>
+
+          <!-- Dimensity -->
+          <div class="wiki-box p-4 rounded border-l-4 border-l-emerald-600">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xs font-bold uppercase text-emerald-500">Dimensity</h3>
+              <i data-lucide="video" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <p class="text-xs text-slate-400 mb-3">Optimizations for MediaTek processors focusing on driver workarounds.</p>
+            <a href="https://youtu.be/xli_ChkgNeU?si=enLbKqJbynkdIaLB" target="_blank" rel="noopener noreferrer" class="wiki-link text-xs font-semibold inline-flex items-center gap-1">
+              <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-500"></i> Watch Guide on YouTube &rarr;
+            </a>
+          </div>
+
+          <!-- Exynos -->
+          <div class="wiki-box p-4 rounded border-l-4 border-l-blue-600">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xs font-bold uppercase text-blue-500">Exynos</h3>
+              <i data-lucide="video" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <p class="text-xs text-slate-400 mb-3">Detailed adjustments for Samsung Exynos processors & Mali environments.</p>
+            <a href="https://youtu.be/dJyED7PBHAo?si=-TlkD1jicKOZtTjx" target="_blank" rel="noopener noreferrer" class="wiki-link text-xs font-semibold inline-flex items-center gap-1">
+              <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-500"></i> Watch Guide on YouTube &rarr;
+            </a>
+          </div>
+
+          <!-- Unisoc -->
+          <div class="wiki-box p-4 rounded border-l-4 border-l-purple-600">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xs font-bold uppercase text-purple-500">Unisoc</h3>
+              <i data-lucide="video" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <p class="text-xs text-slate-400 mb-3">Settings tailored for low-spec or budget Unisoc processor devices.</p>
+            <a href="https://youtu.be/SqNRJEgIFiw?si=zf70PIeRsv5c4daL" target="_blank" rel="noopener noreferrer" class="wiki-link text-xs font-semibold inline-flex items-center gap-1">
+              <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-500"></i> Watch Guide on YouTube &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Tips -->
+      <section id="faq" class="scroll-mt-6">
+        <h2 class="wiki-h2 text-xl font-serif font-semibold text-slate-100 pb-2 mb-4">
+          <span class="text-slate-400">4.</span> Pro Emulation Tips
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300">
+          <div class="p-3 bg-[#0d1117] border border-[#30363d] rounded">
+            <h4 class="font-bold text-slate-100 mb-1">FPS Tweaking</h4>
+            <p class="text-xs leading-relaxed text-slate-400">If games perform poorly, lower game resolution inside the Winlator container settings (e.g. to 800x600). Additionally, limit CPU threads in Wine options.</p>
+          </div>
+          <div class="p-3 bg-[#0d1117] border border-[#30363d] rounded">
+            <h4 class="font-bold text-slate-100 mb-1">Control Mapping</h4>
+            <p class="text-xs leading-relaxed text-slate-400">You can customize virtual keys and map keyboard commands directly to touch elements. Tap "Controls" in the sidebar menu of your container.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Help & Support -->
+      <section id="contact" class="scroll-mt-6">
+        <h2 class="wiki-h2 text-xl font-serif font-semibold text-slate-100 pb-2 mb-4">
+          <span class="text-slate-400">5.</span> Help, Games & Support DM
+        </h2>
+        <div class="wiki-box p-6 rounded">
+          <h3 class="text-base font-bold text-slate-100 mb-1">Need Games or Setup Help?</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            If you run into issues during configuration, or if you <strong class="text-slate-200">want game files, custom setups, or other emulation help</strong>, you can drop me a DM or ask me privately on Instagram!
+          </p>
+          <a href="https://www.instagram.com/psy.d_micheal_21?igsh=MTRsYnIwMGFzemRnaw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-pink-950/40 hover:bg-pink-900/50 border border-pink-900 text-pink-300 rounded text-xs font-bold transition-colors">
+            <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
+            DM @psy.d_micheal_21 privately
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Wiki Footer -->
+    <footer class="p-6 bg-[#0d1117] border-t border-[#30363d] text-xs text-slate-500 text-center">
+      <p class="mb-1">This page was last edited on May 27, 2026.</p>
+      <p>Text is available under the Creative Commons Attribution-ShareAlike License.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+
+```
